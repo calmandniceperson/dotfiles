@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+	<menu id="apps-accessories-menu" label="Accessories">
+		<item label="Calculator">
+			<action name="Execute">
+				<command>gnome-calculator</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Character Map">
+			<action name="Execute">
+				<command>gnome-character-map</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Ark File Archiver">
+			<action name="Execute">
+				<command>ark</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-editors-menu" label="Editors">
+		<item label="Emacs">
+			<action name="Execute">
+				<command>emacs</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+					<wmclass>Emacs</wmclass>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Atom">
+			<action name="Execute">
+				<execute>atom</execute>
+			</action>
+		</item>
+		<item label="GEdit">
+			<action name="Execute">
+				<command>gedit</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-term-menu" label="Terminals">
+		<item label="Rxvt Unicode">
+			<action name="Execute">
+				<command>urxvt</command>
+			</action>
+		</item>
+		<item label="Gnome Terminal">
+			<action name="Execute">
+				<command>gnome-terminal</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Xterm">
+			<action name="Execute">
+				<command>xterm</command>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-net-menu" label="Internet">
+		<item label="Google Chrome Beta">
+			<action name="Execute">
+				<execute>google-chrome-beta</execute>
+			</action>
+		</item>
+		<item label="Firefox">
+			<action name="Execute">
+				<command>firefox</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+					<wmclass>Firefox</wmclass>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Discord">
+			<action name="Execute">
+				<execute>DiscordCanary</execute>
+			</action>
+		</item>
+        <item label="Franz">
+            <action name="Execute">
+                <execute>Franz</execute>
+            </action>
+        </item>
+		<item label="TeamSpeak 3">
+			<action name="Execute">
+				<execute>teamspeak3</execute>
+			</action>
+		</item>
+		<item label="Skype">
+			<action name="Execute">
+				<execute>skype</execute>
+			</action>
+		</item>
+		<item label="XChat">
+			<action name="Execute">
+				<command>xchat</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-office-menu" label="Office">
+		<item label="LibreOffice">
+			<action name="Execute">
+				<execute>libreoffice</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-multimedia-menu" label="Multimedia">
+		<item label="Spotify">
+			<action name="Execute">
+				<execute>spotify</execute>
+			</action>
+		</item>
+		<item label="Lollypop">
+			<action name="Execute">
+				<execute>lollypop</execute>
+			</action>
+		</item>
+		<item label="Totem">
+			<action name="Execute">
+				<command>totem</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-fileman-menu" label="File Managers">
+		<item label="Nautilus">
+			<action name="Execute">
+				<command>nautilus --no-desktop --browser</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Thunar">
+			<action name="Execute">
+				<command>Thunar</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-graphics-menu" label="Graphics">
+		<item label="Gimp">
+			<action name="Execute">
+				<command>gimp</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Gwenview">
+			<action name="Execute">
+				<command>gwenview</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Dia Diagram Editor">
+			<action name="Execute">
+				<command>dia</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Inkscape">
+			<action name="Execute">
+				<command>inkscape</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+	</menu>
+	<menu id="system-menu" label="System">
+		<item label="Openbox Configuration Manager">
+			<action name="Execute">
+				<command>obconf</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="NVIDIA Settings">
+			<action name="Execute">
+				<execute>nvidia-settings</execute>
+			</action>
+		</item>
+		<item label="Mount PrivDrive">
+			<action name="Execute">
+				<execute>mnt_privdrive</execute>
+			</action>
+		</item>
+		<item label="Gnome Control Center">
+			<action name="Execute">
+				<command>gnome-control-center</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Manage Cups Printers">
+			<action name="Execute">
+				<command>xdg-open http://localhost:631/</command>
+				<startupnotify>
+					<enabled>no</enabled>
+					<icon>cups</icon>
+				</startupnotify>
+			</action>
+		</item>
+		<separator/>
+		<item label="Reconfigure Openbox">
+			<action name="Reconfigure"/>
+		</item>
+	</menu>
+	<menu id="root-menu" label="Openbox 3">
+		<separator label="Applications"/>
+		<menu id="apps-accessories-menu"/>
+		<menu id="apps-editors-menu"/>
+		<menu id="apps-graphics-menu"/>
+		<menu id="apps-net-menu"/>
+		<menu id="apps-office-menu"/>
+		<menu id="apps-multimedia-menu"/>
+		<menu id="apps-term-menu"/>
+		<menu id="apps-fileman-menu"/>
+		<separator label="System"/>
+		<menu id="system-menu"/>
+		<separator/>
+		<item label="Log Out">
+			<action name="Exit">
+				<prompt>yes</prompt>
+			</action>
+		</item>
+	</menu>
+</openbox_menu>

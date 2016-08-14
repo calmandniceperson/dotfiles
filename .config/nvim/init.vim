@@ -1,0 +1,1 @@
+/home/inet/dotfiles/init.vim
