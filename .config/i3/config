@@ -246,6 +246,7 @@ bindsym $mod+shift+x exec i3lock --color "$base00"
 
 ## PERSONAL STUFF ##
 focus_follows_mouse no
+hide_edge_borders both
 
 ## ON BOOT ##
 # Load wallpapers
