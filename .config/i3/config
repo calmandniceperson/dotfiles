@@ -84,10 +84,10 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -96,10 +96,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -108,7 +108,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+v split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -159,12 +159,13 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # Bind certain applications to workspaces (get info about applications with xprop
 # Open Spotify on Music workspace
-assign [class="Spotify"] $workspace7
+assign [class="Spotify"] $workspace10
 assign [class="cmus"] $workspace7
 assign [class="google-chrome"] $workspace3
 assign [class="Firefox"] $workspace3
 assign [class="TeamSpeak 3"] $workspace9
 assign [class="discord"] $workspace9
+assign [class="jetbrains-studio"] $workspace2 #android studio
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
@@ -210,6 +211,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym $mod+shift+w exec ~/bin/wall 
+
 # Widow Colours
 #                         border  background text    indicator  
 client.focused            $base01 $base01    $base07 $base0F
@@ -223,7 +226,7 @@ bar {
         tray_output primary
         #status_command i3status
         font pango: System San Francisco Display, FontAwesome 9 
-        status_command i3blocks
+        status_command i3blocks -c ~/.i3/i3blocks.conf
         position top
         colors {
             separator $base03
@@ -247,6 +250,7 @@ workspace $workspace6 output $monitor1
 workspace $workspace7 output $monitor2
 workspace $workspace8 output $monitor2
 workspace $workspace9 output $monitor2
+workspace $workspace10 output $monitor2
 
 bindsym $mod+shift+x exec i3lock --color "$base00"
 bindsym $mod+alt+x exec oblogout
