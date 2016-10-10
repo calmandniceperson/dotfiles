@@ -255,6 +255,9 @@ workspace $workspace10 output $monitor2
 bindsym $mod+shift+x exec i3lock --color "$base00"
 bindsym $mod+alt+x exec oblogout
 
+bindsym $mod+shift+d exec setxkbmap de
+bindsym $mod+shift+g exec setxkbmap us  
+
 ## PERSONAL STUFF ##
 focus_follows_mouse no
 hide_edge_borders both
