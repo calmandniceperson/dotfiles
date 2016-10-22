@@ -271,4 +271,8 @@ exec xrdb ~/.Xresources
 
 exec_always xrandr --output DVI-D-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --off --output DVI-I-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-I-0 --off --output DP-1 --off --output DP-0 --off
 
+# Disable screen saver
+exec xset -dpms
+exec xset s noblank
+
 exec --no-startup-id i3-msg "workspace $workspace1"
