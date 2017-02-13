@@ -69,7 +69,8 @@ font pango:System San Francisco Display 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec xterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -157,15 +158,18 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
-# Bind certain applications to workspaces (get info about applications with xprop
+# Bind certain applications to workspaces (get info about applications with xprop)
 # Open Spotify on Music workspace
 assign [class="Spotify"] $workspace10
+assign [class="Google Play Music Desktop Player"] $workspace10
 assign [class="cmus"] $workspace7
 assign [class="google-chrome"] $workspace3
 assign [class="Firefox"] $workspace3
+assign [class="Vivaldi-stable"] $workspace3
 assign [class="TeamSpeak 3"] $workspace9
 assign [class="discord"] $workspace9
 assign [class="jetbrains-studio"] $workspace2 #android studio
+assign [class="Android Emulator - Nexus_6_API_23:5554"] $workspace8
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
@@ -272,7 +276,7 @@ exec xrdb ~/.Xresources
 exec_always xrandr --output DVI-D-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --off --output DVI-I-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-I-0 --off --output DP-1 --off --output DP-0 --off
 
 # Disable screen saver
-exec xset -dpms
-exec xset s noblank
+#exec xset -dpms
+#exec xset s noblank
 
 exec --no-startup-id i3-msg "workspace $workspace1"
