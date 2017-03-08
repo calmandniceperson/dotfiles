@@ -280,3 +280,6 @@ exec_always xrandr --output DVI-D-0 --primary --mode 1920x1080 --pos 0x0 --rotat
 #exec xset s noblank
 
 exec --no-startup-id i3-msg "workspace $workspace1"
+
+# Start redshift
+exec --no-startup-id redshift-gtk
