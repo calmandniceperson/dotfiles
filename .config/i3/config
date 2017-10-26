@@ -164,12 +164,14 @@ assign [class="Spotify"] $workspace10
 assign [class="Google Play Music Desktop Player"] $workspace10
 assign [class="cmus"] $workspace7
 assign [class="google-chrome"] $workspace3
+assign [class="Chromium"] $workspace3
 assign [class="Firefox"] $workspace3
 assign [class="Vivaldi-stable"] $workspace3
 assign [class="TeamSpeak 3"] $workspace9
 assign [class="discord"] $workspace9
 assign [class="jetbrains-studio"] $workspace2 #android studio
 assign [class="Android Emulator - Nexus_6_API_23:5554"] $workspace8
+assign [class="Steam"] $workspace2
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
