@@ -28,6 +28,7 @@ Plugin 'fatih/vim-go'
 Plugin 'nsf/gocode', {'rtp': 'nvim/'}
 Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer'
+Plugin 'rhysd/vim-crystal'
 
 " Themes
 Plugin 'joshdick/onedark.vim'
