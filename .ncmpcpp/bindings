@@ -313,8 +313,8 @@
 #def_key "ctrl-h"
 #  jump_to_parent_directory
 #
-#def_key "ctrl-h"
-#  replay_song
+def_key "ctrl-h"
+  replay_song
 #
 #def_key "backspace"
 #  jump_to_parent_directory
@@ -322,11 +322,11 @@
 #def_key "backspace"
 #  replay_song
 #
-#def_key "f"
-#  seek_forward
+def_key "f"
+  seek_forward
 #
-#def_key "b"
-#  seek_backward
+def_key "b"
+  seek_backward
 #
 #def_key "r"
 #  toggle_repeat
@@ -358,8 +358,8 @@
 #def_key "#"
 #  toggle_bitrate_visibility
 #
-#def_key "Z"
-#  shuffle
+def_key "Z"
+  shuffle
 #
 #def_key "x"
 #  toggle_crossfade
@@ -542,10 +542,10 @@ def_key "g"
 #  quit
 #
 #
-def_key "f"
-    find
-def_key "f"
-    find_item_forward
+#def_key "f"
+#    find
+#def_key "f"
+#    find_item_forward
 
 def_key "+"
     show_clock
