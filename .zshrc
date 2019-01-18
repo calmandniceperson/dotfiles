@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/inet/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -54,7 +54,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(cp git golang osx git-flow git-extras web-search battery docker postgres redis-cli nyan rand-quote themes lol brew zsh-syntax-highlighting)
+plugins=(cp git golang git-flow git-extras docker postgres themes zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,7 +67,11 @@ source $HOME/.antigen.zsh
 
 eval $(thefuck --alias)
 
-export ANDROID_HOME=/Users/inet/Library/Android/sdk
-export GOPATH=/Users/inet/workspace/go
-export PATH=$GOPATH/bin:$PATH:/Users/inet/.cargo/bin
-eval $(/usr/libexec/path_helper -s)
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export ANDROID_HOME=$HOME/workspace/Android/sdk
+export ANDROID_SDK_ROOT=$HOME/workspace/Android/sdk
+export GOPATH=$HOME/workspace/go
+export PATH=$GOPATH/bin:$PATH:$HOME/.cargo/bin
+
+autoload -U +X bashcompinit && bashcompinit
