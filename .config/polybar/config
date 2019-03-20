@@ -26,6 +26,14 @@ scroll-down = i3wm-wsprev
 modules-left = i3 
 modules-right = pulseaudio cpu temperature memory filesystem wireless-network battery date
 
+tray-position = right
+; If true, the bar will not shift its
+; ; contents when the tray changes
+tray-detached = false
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 0
+
 [module/backlight]
 type = internal/xbacklight
 format = <ramp> <bar>
