@@ -129,6 +129,14 @@ reverse-scroll = false
 ; Example: code;♚ will apply the icon to all workspaces 
 ; containing 'code' in the label
 ; Default: false
+;
+
+label-focused = %index% %name%
+#label-unfocused = %icon% %index%
+label-focused-foreground = #fff
+
+label-unfocused = %index% %name%
+label-unfocused-foreground = #666
 
 label-focused-padding = 1
 label-unfocused-padding = 1
