@@ -7,7 +7,7 @@ width = 100%
 height = 28
 
 background = #00000000
-foreground = #ccffffff
+foreground = #ffffffff
 
 line-size = 16
 
