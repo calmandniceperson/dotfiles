@@ -1,5 +1,5 @@
 [options]
-font = Input Mono 9
+font = Cascadia Code 10
 
 background = rgba(0,0,0,0.9)
 
