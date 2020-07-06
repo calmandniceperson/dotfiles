@@ -12,7 +12,7 @@
   # available, otherwise `xterm-256color` is used.
   #TERM: alacritty
 
-#window:
+window:
   # Window dimensions (changes require restart)
   #
   # Specified in number of columns/lines, not pixels.
@@ -49,7 +49,7 @@
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
-  #decorations: full
+  decorations: none
 
   # Startup Mode (changes require restart)
   #
@@ -136,7 +136,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 9.0
+  size: 9.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -170,22 +170,19 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (Hyper)
+# Colors (Material Theme)
 colors:
   # Default colors
   primary:
     background: '0x000000'
-    foreground: '0xffffff'
-  cursor:
-    text: '0xF81CE5'
-    cursor: '0xffffff'
+    foreground: '0xd0d0d0'
 
   # Normal colors
   normal:
     black:   '0x000000'
-    red:     '0xfe0100'
+    red:     '0xff0000'
     green:   '0x33ff00'
-    yellow:  '0xfeff00'
+    yellow:  '0xff0099'
     blue:    '0x0066ff'
     magenta: '0xcc00ff'
     cyan:    '0x00ffff'
@@ -194,13 +191,13 @@ colors:
   # Bright colors
   bright:
     black:   '0x808080'
-    red:     '0xfe0100'
+    red:     '0xff0000'
     green:   '0x33ff00'
-    yellow:  '0xfeff00'
+    yellow:  '0xff0099'
     blue:    '0x0066ff'
     magenta: '0xcc00ff'
     cyan:    '0x00ffff'
-    white:   '0xFFFFFF'
+    white:   '0xffffff'
 
 # Visual Bell
 #
@@ -232,7 +229,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-#background_opacity: 1.0
+background_opacity: 0.8
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
