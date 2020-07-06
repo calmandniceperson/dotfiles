@@ -83,9 +83,6 @@ map <C-n> :NERDTreeToggle<CR>
 
 let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/.ycm_extra_conf_c.py"
 
-" Format on save: https://github.com/Chiel92/vim-autoformat
-au BufWrite * :Autoformat
-
 set tabstop=4       " The width of a TAB is set to 4.
 " Still it is a \t. It is just that
 " Vim will interpret it to be having
