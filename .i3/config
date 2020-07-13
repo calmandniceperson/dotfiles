@@ -73,7 +73,7 @@ set $monitor2 "DVI-D-0"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:System San Francisco Display 9
+font pango:System San Francisco Display 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -92,14 +92,14 @@ floating_modifier $mod
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 #bindsym $mod+Return exec xterm
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run -fn 'Input Mono-8'
+bindsym $mod+d exec rofi -show
 #bindsym $mod+d exec rofi -show run
 #bindsym $mod+d exec rofi -show run -lines 5 -eh 1 -width 50 -padding 40 -opacity "85" -bw 0 -bc "$base00" -bg "$base01" -fg "$text-color" -hlbg "$base01" -hlfg "#9575cd" -font "System San Francisco Display 12"
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -188,7 +188,7 @@ assign [class="Google Play Music Desktop Player"] $workspace10
 assign [class="cmus"] $workspace7
 assign [class="google-chrome"] $workspace10
 assign [class="Chromium"] $workspace3
-assign [class="Firefox"] $workspace3
+assign [class="firefox"] $workspace3
 assign [class="Vivaldi-stable"] $workspace3
 assign [class="qutebrowser"] $workspace3
 assign [class="TeamSpeak 3"] $workspace9
@@ -199,9 +199,9 @@ assign [class="Steam"] $workspace4
 assign [class="MellowPlayer"] $workspace10
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
+bindsym XF86AudioMute exec pulseaudio-ctl mute
 
 # Media player controls
 #bindsym XF86AudioPlay exec playerctl play
@@ -259,28 +259,6 @@ gaps inner 5
 gaps outer 8
 #smart_gaps on
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        tray_output primary
-        font pango: Roboto, FontAwesome 9 
-        status_command i3blocks -c ~/.i3/i3blocks.conf
-        i3bar_command i3bar -t
-        position top
-        colors {
-            separator $transparent
-            background $transparent
-            statusline $white
-
-                             # BORDER       BACKGROUND   TEXT
-            focused_workspace  $transparent $transparent $base07
-            inactive_workspace $transparent $transparent $black
-            active_workspace   $transparent $transparent $base03
-            urgent_workspace   $transparent $transparent $base08
-            binding_mode       $black       $black       $transparent
-        }
-}
-
 # Multi-monitor workspace config
 workspace $workspace1 output $monitor1
 workspace $workspace2 output $monitor1
@@ -294,7 +272,7 @@ workspace $workspace9 output $monitor2
 workspace $workspace10 output $monitor2
 
 #bindsym $mod+shift+x exec sh /home/inet/.i3/lock.sh
-bindsym $mod+shift+x exec i3lock-fancy-dualmonitor -g -p
+bindsym $mod+shift+x exec i3lock-fancy-dualmonitor
 bindsym $mod+alt+x exec oblogout
 
 bindsym $mod+shift+d exec setxkbmap de
@@ -317,6 +295,9 @@ exec_always xrandr --output DVI-I-1 --primary --mode 1920x1080 --pos 1920x0 --ro
 #exec xset -dpms
 #exec xset s noblank
 
+# Start redshift
+#exec --no-startup-id redshift-gtk
+
 # Start mpd (music player daemon)
 exec mpd ~/.config/mpd/mpd.conf
 
@@ -325,5 +306,4 @@ exec --no-startup-id i3-msg "workspace $workspace1"
 # Compton for transparency and other stuff
 exec --no-startup-id compton --dbus &
 
-# Start redshift
-#exec --no-startup-id redshift-gtk
+exec_always sh $HOME/.i3/polybar.sh &
