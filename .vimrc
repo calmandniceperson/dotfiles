@@ -37,7 +37,6 @@ Plugin 'vim-scripts/vibrantink'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'arzg/vim-colors-xcode'
-Plugin 'chuling/ci_dark'
 
 " Airline
 Plugin 'vim-airline/vim-airline'
