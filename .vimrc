@@ -37,26 +37,22 @@ Plugin 'vim-scripts/vibrantink'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'arzg/vim-colors-xcode'
-Plugin 'chuling/pure-material.vim'
+Plugin 'chuling/ci_dark'
 
 " Airline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-Plugin 'neoclide/coc.nvim'
-Plugin 'luochen1990/rainbow'
+Plugin 'neoclide/coc.nvim'                              " Autocomplete
+Plugin 'luochen1990/rainbow'                            " Rainbow parantheses
 Plugin 'scrooloose/nerdtree'                            " File tree browser
 Plugin 'Xuyuanp/nerdtree-git-plugin'                    " Git for NerdTree
 Plugin 'rbgrouleff/bclose.vim'                          " Close current buffer
 Plugin 'tpope/vim-fugitive'                             " Git integration<Paste>
 Plugin 'chrisbra/Colorizer'                             " Show hex codes as colours
-Plugin 'kien/rainbow_parentheses.vim'                   " Colour matched brackets
-Plugin 'arkwright/vim-whiteboard'                       " Whiteboard
-Plugin 'ryanoasis/vim-devicons'
-"Plugin 'airblade/vim-gitgutter'                         " Git diff in side
-Plugin 'mtth/scratch.vim'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'Chiel92/vim-autoformat'
+Plugin 'ryanoasis/vim-devicons'                         " Icons in status bar and nerdtree
+Plugin 'sheerun/vim-polyglot'                           " Language pack
+Plugin 'Chiel92/vim-autoformat'                         " Autoformat tool
 call vundle#end()
 
 set number relativenumber
@@ -105,10 +101,8 @@ highlight clear LineNr
 highlight clear SignColumn
 
 syntax on
-"colorscheme pure_material
 colorscheme molokai
 set background=dark
-"set termguicolors
 
 let g:rainbow_active = 1
 
@@ -117,6 +111,3 @@ hi NonText ctermbg=none
 hi LineNr ctermbg=none
 
 let g:airline_theme='simple'
-
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48:2;%lu;%lu;%lum"
