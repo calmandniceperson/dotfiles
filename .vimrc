@@ -20,6 +20,11 @@ Plugin 'wakatime/vim-wakatime'
 Plugin 'rust-lang/rust.vim' " highlighting, etc.
 "Plugin 'racer-rust/vim-racer'   " autocompletion
 Plugin 'lervag/vimtex'
+" post install (yarn install | npm install) then load plugin only for editing
+" supported files
+Plugin 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
 " Themes
 Bundle 'sonph/onehalf', {'rtp': 'vim/'}
@@ -43,6 +48,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'neoclide/coc.nvim'                              " Autocomplete
+Plugin 'tpope/vim-sleuth'                               " Adapt tab width heuristically
 Plugin 'luochen1990/rainbow'                            " Rainbow parantheses
 Plugin 'scrooloose/nerdtree'                            " File tree browser
 Plugin 'Xuyuanp/nerdtree-git-plugin'                    " Git for NerdTree
