@@ -54,7 +54,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(cp git golang git-flow git-extras docker postgres themes zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(cp git git-flow git-extras golang docker postgres themes zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -73,5 +73,14 @@ export ANDROID_HOME=$HOME/workspace/Android/sdk
 export ANDROID_SDK_ROOT=$HOME/workspace/Android/sdk
 export GOPATH=$HOME/workspace/go
 export PATH=$GOPATH/bin:$PATH:$HOME/.cargo/bin
+export XDG_DATA_DIRS=$HOME/.config
 
 autoload -U +X bashcompinit && bashcompinit
+
+
+export XCURSOR_SIZE=16
+
+# Start X11 server with i3
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+    exec startx /usr/bin/i3
+fi
