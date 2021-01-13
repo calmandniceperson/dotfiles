@@ -78,9 +78,8 @@ export XDG_DATA_DIRS=$HOME/.config
 autoload -U +X bashcompinit && bashcompinit
 
 
-export XCURSOR_SIZE=16
-
-# Start X11 server with i3
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-    exec startx /usr/bin/i3
+    # Start X server if nothing else is running.
+    # ~/.xinitrc contains further instructions
+    exec startx
 fi
