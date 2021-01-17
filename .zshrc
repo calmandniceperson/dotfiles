@@ -74,6 +74,8 @@ export ANDROID_SDK_ROOT=$HOME/workspace/Android/sdk
 export GOPATH=$HOME/workspace/go
 export PATH=$GOPATH/bin:$PATH:$HOME/.cargo/bin
 export XDG_DATA_DIRS=$HOME/.config
+export XDG_CONFIG_DIRS="/etc/xdg"export
+export XDG_DATA_DIRS="/usr/share:/usr/local/share"
 
 autoload -U +X bashcompinit && bashcompinit
 
