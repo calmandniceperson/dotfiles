@@ -1,0 +1,63 @@
+{
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.activityBar.visible": false,
+  "breadcrumbs.enabled": true,
+  "editor.renderControlCharacters": false,
+  "editor.renderWhitespace": "selection",
+  "workbench.statusBar.visible": true,
+  "editor.lineNumbers": "relative",
+  "window.menuBarVisibility": "toggle",
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "Input Mono",
+  //"editor.fontWeight": "450",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontWeightBold": "normal",
+  "debug.console.fontSize": 12,
+  "markdown.preview.fontSize": 12,
+  "workbench.editor.tabSizing": "shrink",
+  "window.zoomLevel": 0,
+  "go.formatTool": "goimports",
+  "go.useLanguageServer": true,
+  "C_Cpp.updateChannel": "Insiders",
+  "C_Cpp.default.compilerPath": "/usr/bin/gcc",
+  "C_Cpp.default.intelliSenseMode": "gcc-x64",
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "editor.minimap.enabled": false,
+  "editor.renderIndentGuides": false,
+  /* Formatter settings */
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.exclude": {
+    "**/__pycache__": true
+  },
+  "editor.fontSize": 13,
+  "workbench.colorTheme": "Community Material Theme Darker",
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#e6c62f",
+		"statusBar.debuggingBackground": "#e6c62f",
+		"statusBar.foreground": "#1c212b",
+		"statusBar.noFolderBackground": "#e6c62f",
+		"statusBarItem.hoverBackground": "#b39b239a"
+  }
+}
