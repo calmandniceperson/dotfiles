@@ -65,8 +65,6 @@ source $HOME/.antigen.zsh
 #autoload -U promptinit; promptinit
 #prompt pure
 
-eval $(thefuck --alias)
-
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export ANDROID_HOME=$HOME/workspace/Android/sdk
