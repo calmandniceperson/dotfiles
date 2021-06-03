@@ -53,8 +53,9 @@ set $workspace8 "8: "
 set $workspace9 "9: "
 set $workspace10 "10: "
 
-set $monitor1 "DP-2-3" # Adapt as needed
-set $monitor2 "DP-2-2"
+set $monitor1 "DP2" # Adapt as needed
+
+set $monitor2 "DP1-2"
 
 # Multi-monitor workspace config
 workspace $workspace1 output $monitor1
