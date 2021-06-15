@@ -1,137 +1,53 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Completion, etc.
+Plug 'neovim/nvim-lspconfig'    " LSP
+Plug 'hrsh7th/nvim-compe'       " Necessary for autocompletion
+Plug 'sbdchd/neoformat'
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'wakatime/vim-wakatime'
-
-" Autocompletion
-Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plugin 'zchee/deoplete-clang'
-Plugin 'zchee/deoplete-go', { 'do': 'make'}
-Plugin 'sebastianmarkow/deoplete-rust'
-
-"Languages
-Plugin 'plasticboy/vim-markdown'
-Plugin 'fatih/vim-go'
-Plugin 'nsf/gocode', {'rtp': 'nvim/'}
-Plugin 'rust-lang/rust.vim'
+" Time tracking
+Plug 'wakatime/vim-wakatime'
 
 " Themes
-Plugin 'Erichain/vim-monokai-pro'
-Plugin 'felipesousa/rupza'
-Plugin 'skielbasa/vim-material-monokai'
-Plugin 'joshdick/onedark.vim'
-Plugin 'rakr/vim-one'
-Plugin 'ayu-theme/ayu-vim'
-Plugin 'chriskempson/base16-vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'ChrisKempson/Tomorrow-Theme'
-Plugin 'vim-scripts/vibrantink'
-Plugin 'flazz/vim-colorschemes'
+Plug 'folke/tokyonight.nvim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'KeitaNakamura/neodark.vim'
+Plug 'danilo-augusto/vim-afterglow'
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
-" Airline
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " File tree browser
+Plug 'Xuyuanp/nerdtree-git-plugin'                      " Git for NerdTree
+"Plug 'chrisbra/Colorizer'                               " Show hex codes as colours
+"Plug 'kien/rainbow_parentheses.vim'                     " Colour matched brackets
+Plug 'airblade/vim-gitgutter'                           " Git diff in side
+Plug 'tpope/vim-fugitive'
+Plug 'ryanoasis/vim-devicons'
 
-Plugin 'scrooloose/nerdtree'                            " File tree browser
-Plugin 'Xuyuanp/nerdtree-git-plugin'                    " Git for NerdTree
-Plugin 'rbgrouleff/bclose.vim'                          " Close current buffer
-Plugin 'tpope/vim-fugitive'                             " Git integration<Paste>
-Plugin 'chrisbra/Colorizer'                             " Show hex codes as colours
-Plugin 'kien/rainbow_parentheses.vim'                   " Colour matched brackets
-Plugin 'arkwright/vim-whiteboard'                       " Whiteboard
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'airblade/vim-gitgutter'                         " Git diff in side
-Plugin 'mtth/scratch.vim'
-call vundle#end()
-
-" Required:
-filetype plugin indent on
-
-" neocomplete like
-set completeopt+=noinsert
-" deoplete.nvim recommend
-set completeopt+=noselect
-
-" =============================================================================
-" 				AUTOCOMPLETION SETTINGS
-" =============================================================================
-" Run deoplete.nvim automatically
-let g:deoplete#enable_at_startup = 1
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-" Path to python interpreter for neovim
-"let g:python3_host_prog  = '/usr/bin/python'
-" Skip the check of neovim module
-"let g:python3_host_skip_check = 1
-" deoplete-go settings
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-
-let s:uname = system("uname")
-if s:uname == "Darwin\n"
-    let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-    let g:deoplete#sources#rust#racer_binary='/Users/inet/.cargo/bin/racer'
-    let g:deoplete#sources#rust#rust_source_path='/usr/local/src/rust/src/'
-    let g:deoplete#sources#clang#libclang_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
-else
-    let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-    let g:deoplete#sources#rust#racer_binary=$HOME.'/.cargo/bin/racer'
-    let g:deoplete#sources#rust#rust_source_path='/usr/local/src/rust/src/'
-    let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'
-endif
-"let g:deoplete#sources#clang#clang_header=''
+" Initialize plugin system
+call plug#end()
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" GO
-" Some linux distributions set filetype in /etc/vimrc.
-" Clear filetype flags before changing runtimepath to force vim to reload them
-"filetype off
-"filetype plugin indent off
-"set runtimepath+=$GOROOT/misc/vim
-"filetype plugin indent on
-"syntax on
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_builds_constraints = 1
-let g:go_highlight_generate_tags = 1
-let g:go_fmt_command = "goimports"
-
+" General settings
+set encoding=utf8
+syntax enable
+set showtabline=0                                       " hide tab line at the top
+set hidden
+set number relativenumber                               " Relative line numbers
+set noshowmode
 set autoindent
 set smartindent
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
-
+inoremap {<CR> {<CR>}<C-o>O                             " put cursor between brackets
+highlight clear SignColumn                              " make sign column (gutter) less ugly
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 80 characters limit
-" execute "set colorcolumn=" . join(range(81,335), ',')
-highlight ColorColumn ctermbg=Black ctermfg=DarkRed
-set colorcolumn=81
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" highlight trailing spaces
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" show relative line numbers
-set number relativenumber
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
@@ -143,51 +59,86 @@ let g:NERDTreeDirArrowExpandable = '├'
 let g:NERDTreeDirArrowCollapsible = '└'
 let g:NERDTreeMapActivateNode = '<tab>'
 set mouse=a
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" put cursor between brackets
-inoremap {<CR> {<CR>}<C-o>O
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Lightline
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" devicons
-set encoding=utf8
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                   AUTOCOMPLETION WITH LSP
+lua << EOF
+require'lspconfig'.pyright.setup{}
+require'lspconfig'.clangd.setup{}
+require'lspconfig'.gopls.setup{}
+require'lspconfig'.java_language_server.setup{}
+require'lspconfig'.kotlin_language_server.setup{}
+local pid = vim.fn.getpid()
+local omnisharp_bin = "/usr/bin/omnisharp"
+require'lspconfig'.omnisharp.setup{
+    cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) };
+}
+require'lspconfig'.rust_analyzer.setup{}
+require'lspconfig'.vuels.setup{}
+require'lspconfig'.tsserver.setup{}
 
-syntax enable
-let g:airline_theme='wombat'
-"let g:airline_theme='one'
+-- Setup for compe
+vim.o.completeopt = "menuone,noselect"
+require'compe'.setup {
+  enabled = true;
+  autocomplete = true;
+  debug = false;
+  min_length = 1;
+  preselect = 'enable';
+  throttle_time = 80;
+  source_timeout = 200;
+  resolve_timeout = 800;
+  incomplete_delay = 400;
+  max_abbr_width = 100;
+  max_kind_width = 100;
+  max_menu_width = 100;
+  documentation = true;
 
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
-"if (empty($TMUX))
-"  if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-"  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"  endif
-"  if (has("termguicolors"))
-"    set termguicolors
-"  endif
-"endif
+  source = {
+    path = true;
+    buffer = true;
+    calc = true;
+    nvim_lsp = true;
+    nvim_lua = true;
+    vsnip = true;
+    ultisnips = true;
+  };
+}
 
-" hide tab line at the top
-set showtabline=0
+EOF
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set hidden
-"let g:racer_cmd = "/home/inet/.cargo/bin/racer"
-"let g:racer_experimental_completer = 1
-if executable('rls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
-        \ 'whitelist': ['rust'],
-        \ })
-endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Auto format on save
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
+let g:neoformat_basic_format_trim = 1
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"let ayucolor="light"  " for light version of theme
-"let ayucolor="mirage" " for mirage version of theme
-"let ayucolor="dark"   " for dark version of theme
-"colorscheme ayu
+"let g:afterglow_inherit_background=1
+"let g:afterglow_italic_comments=1
+"colorscheme afterglow
 
-colorscheme monokain
-"colorscheme monokai_pro
-"colorscheme onedark
+let g:challenger_deep_terminal_italics = 1
+colorscheme challenger_deep
+" Make background transparent
+hi Normal guibg=NONE ctermbg=NONE
+" Make line number bar transparent
+hi LineNr guibg=NONE ctermbg=NONE
