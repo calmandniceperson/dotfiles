@@ -15,6 +15,7 @@ return require('packer').startup(function()
     use { 'wakatime/vim-wakatime' }
 
     -- Themes
+    use { 'projekt0n/github-nvim-theme' }
     use { 'folke/tokyonight.nvim' }
     use { 'NLKNguyen/papercolor-theme' }
     use { 'KeitaNakamura/neodark.vim' }
