@@ -25,10 +25,9 @@ return require('packer').startup(function()
 
     use { 'hoob3rt/lualine.nvim' }
     use { 'romgrk/barbar.nvim' }
+    use { 'yamatsum/nvim-cursorline' }
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'ryanoasis/vim-devicons' }
-    -- use { 'scrooloose/nerdtree', cmd = { 'NERDTreeToggle' }} -- File browser
-    -- use { 'Xuyuanp/nerdtree-git-plugin' }                    -- Git for NerdTree
     use { 'kyazdani42/nvim-tree.lua' }
     use { 'airblade/vim-gitgutter' }                         -- Git diff in side
     use { 'tpope/vim-fugitive' }
